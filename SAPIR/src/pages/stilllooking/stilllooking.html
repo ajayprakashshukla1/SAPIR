@@ -1,0 +1,130 @@
+
+<ion-header padding class="lg_screen_bg">
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" class="menu_icon"></ion-icon>
+      </button>
+          <ion-title Class="for_sale">
+            <img src="assets/imgs/logosapir.png" class="logo_img">
+          </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-grid [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+        <ion-row class="content_align">
+            <ion-col col-12 text-center>
+                <span class="tellus">{{'Tell us what you are looking for' | translate}}</span><br><span class="small_text">{{'Please fill out the form below and we will contact you shortly.' | translate}}</span>
+            </ion-col>
+          </ion-row>
+        <form class="list-form" [formGroup]="stillLookingForm"  (ngSubmit)="sendData(stillLookingForm.value)"> 
+            <ion-input formControlName="token" value="{{token}}" hidden type="text" placeholder="{{'PROPERTY TYPE' | translate}}"></ion-input>
+      <ion-row class="form_padding" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+        <ion-col col-12>
+    <ion-item>
+      <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="type" type="text" placeholder="{{'Property Purpose' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+        <ion-option  value="sell">{{'Sell' | translate}}</ion-option>           
+        <ion-option  value="rent">{{'Rent' | translate}}</ion-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+        <ion-select [selectOptions]="selectOptions" multiple="true" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="propertyType" type="text" placeholder="{{'Properties Type' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+          <ion-option value="Cottage">{{'Cottage' | translate}}</ion-option>
+          <ion-option value="Duplex">{{'Duplex' | translate}}</ion-option>
+          <ion-option value="Flats">{{'Flats' | translate}}</ion-option>
+          <ion-option value="Penthouse">{{'Penthouse' | translate}}</ion-option>
+          <ion-option value="Villa">{{'Villa' | translate}}</ion-option>
+          <ion-option value="Studio">{{'Studio' | translate}}</ion-option>
+          <ion-option value="Commercial">{{'Commercial' | translate}}</ion-option>
+        </ion-select>
+      </ion-item>
+        <ion-item>
+          <ion-input formControlName="budget" type="number" placeholder="{{'Budget' | translate}}"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-select [selectOptions]="selectOptions" multiple="true" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="furniture" placeholder="{{'Furniture' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+          <ion-option value="Fully Furnished">{{'Fully Furnished' | translate}}</ion-option>
+          <ion-option value="Semi Furnished">{{'Semi Furnished' | translate}}</ion-option>
+          <ion-option value="Non Furnished">{{'Non Furnished' | translate}}</ion-option>
+          </ion-select>
+        </ion-item>
+   
+      <ion-item>
+          <ion-input formControlName="neighbourhood" type="text" placeholder="{{'NEIGHBOURHOOD' | translate}}"></ion-input>
+        </ion-item>
+
+          <ion-item>
+              <ion-input formControlName="numberOfBedrooms" type="tel" placeholder="{{'Number of Bedrooms' | translate}}"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+                <ion-input formControlName="numberOfBathrooms" type="tel" placeholder="{{'Number of Bathrooms' | translate}}"></ion-input>
+              </ion-item>
+  
+              <ion-item>
+                  <ion-input formControlName="floorPreferred" type="tel" placeholder="{{'Floor Preferred' | translate}}"></ion-input>
+                </ion-item>
+  
+                <ion-item>
+  
+                <ion-select [selectOptions]="selectOptions" multiple="true" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="amenities" placeholder="{{'Amenities' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                  <ion-option value="Air-conditioning">{{'Air-conditioning' | translate}}</ion-option>
+                  <ion-option value="Balcony">{{'Balcony' | translate}}</ion-option>
+                  <ion-option value="Storage">{{'Storage' | translate}}</ion-option>
+                  <ion-option value="Parking">{{'Parking' | translate}}</ion-option>
+                  <ion-option value="Elevator">{{'Elevator' | translate}}</ion-option>
+                  <ion-option value="Pets">{{'Pets' | translate}}</ion-option>
+                  <ion-option value="Accessibility">{{'Accessibility' | translate}}</ion-option>
+                  <ion-option value="Bars"> {{'Bars' | translate}}</ion-option>
+                  <ion-option value="Renovated">{{'Renovated' | translate}}</ion-option>
+                  <ion-option value="Safe Room">{{'Safe Room' | translate}}</ion-option>
+                  <ion-option value="Long-Term">{{'Long-Term' | translate}}</ion-option>
+                  </ion-select>
+                </ion-item>
+  
+  </ion-col>
+  <ion-col col-12>
+      <ion-item>
+          <ion-input formControlName="city" type="text" placeholder="{{'City' | translate}}"></ion-input>
+        </ion-item>
+  </ion-col> 
+    <ion-col col-12>
+          <ion-item>
+              <ion-input formControlName="sizeInSquareFeet" type="number" placeholder="{{'SIZE IN SQUARE FEET' | translate}}"></ion-input>
+            </ion-item>
+    </ion-col>
+  </ion-row>
+ 
+  <ion-row class="bottom_color_bg" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'rtl' : (normalContent !='ar')}">
+  <ion-col col-12>
+      <ion-item>
+          <ion-input type="text"  formControlName="name" placeholder="{{'NAME' | translate}}" class="place_holder_text"></ion-input>
+        </ion-item>
+  </ion-col>
+  <ion-col col-6>
+      <ion-item>
+          <ion-input formControlName="phoneNumber" type="tel" placeholder="{{'PHONE' | translate}} #" class="place_holder_text"></ion-input>
+        </ion-item>
+    </ion-col>
+    <ion-col col-6>
+        <ion-item>
+            <ion-input formControlName="email" type="email" placeholder="{{'Email' | translate}}" class="place_holder_text"></ion-input>
+          </ion-item>
+      </ion-col>
+      <ion-col col-12>
+          <ion-item>
+              <ion-input formControlName="message" type="text" placeholder="{{'MESSAGE' | translate}}" class="place_holder_text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col col-12 text-center class="send_btn">
+            <ion-col col-5>      
+              <button type="submit" ion-button  [disabled]="stillLookingForm.get('name').hasError('required')  || stillLookingForm.get('email').hasError('required') || stillLookingForm.get('phoneNumber').hasError('required') || stillLookingForm.get('message').hasError('required') "class="view_map">{{'SEND' | translate}}</button>
+            </ion-col>
+          </ion-col>
+  </ion-row>
+  </form>
+  </ion-grid>
+  </ion-content>
+  

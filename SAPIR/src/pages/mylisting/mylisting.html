@@ -1,0 +1,98 @@
+<!--
+  Generated template for the MylistingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="lg_screen_bg" padding>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menu_icon"></ion-icon>
+    </button>
+        <ion-title Class="for_sale">
+          <img src="assets/imgs/logosapir.png" class="logo_img">
+        </ion-title>
+        <div class="language_selector" end>
+          <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" placeholder="{{ 'Set Language' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+            <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name | translate}}</ion-option>
+          </ion-select>
+        </div>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content no-padding>
+<ion-grid no-padding [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+  <ion-row class="mobile_img">
+    <ion-col col-12 no-padding>
+        <img  src="assets/imgs/My_Listings1.png">
+    </ion-col>
+      <ion-col col-12>
+       <ion-row class="mylisting_user">
+         <ion-col col-4 text-center>
+           <img src="{{userInfo.user_pic}}">
+         </ion-col>
+         <ion-col col-6>
+           <p>{{userInfo.user_display_name}}</p>
+          </ion-col>
+       </ion-row>
+      </ion-col>
+  </ion-row>
+<ion-row class="property_home" padding [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+  <ion-col col-7>
+    <span><img src="assets/imgs/Propreties-Icon.png"></span>
+    <span>{{userInfo.no_of_properties}} {{'Properties Listed' |translate}}</span>
+  </ion-col>
+</ion-row>
+  <ion-row>
+    <ion-col col-12>
+      <ion-row class="my_listing_text">
+          <ion-col col-12 text-center>
+              <h3>{{'My Listings' | translate}}</h3>
+            </ion-col>
+      </ion-row>
+      <ion-row class="property_bedroom" *ngFor="let property of properties[0]">
+          <ion-col col-12 no-padding>
+              <img (click)="openPropertyDetail(property)" src="{{property.picture}}">
+              <p no-margin>{{property.title}}</p>
+            </ion-col>
+            <ion-col col-12 no-padding class="border_align">
+              <span> <img src="assets/imgs/building.png"></span>
+              <span class="kiryat_Bialik">{{property.city | translate}}</span>
+            </ion-col>
+            <ion-col col-12 no-padding class="address_img_sec">
+                <span>
+                    <ion-icon name="pin"></ion-icon>
+                 </span>
+              <span>{{property.area | translate}}</span>
+            </ion-col>
+            
+            <ion-col col-7>
+                <div class="bottom_img_sec">
+                  <span><img src="assets/imgs/8.png"> &nbsp;<strong>{{property.bedrooms}}</strong></span>&nbsp;
+                  <span><img src="assets/imgs/7.png">&nbsp;<strong>{{property.bathrooms}}</strong></span>&nbsp;
+                  <span><img src="assets/imgs/building.png">&nbsp;<strong>{{property.floor}}</strong></span>
+                </div>
+            </ion-col>
+            <ion-col col-5 class="payment">
+               <p no-margin>{{property.price}}</p>
+              </ion-col>
+              <ion-col col-12 class="date_sec">
+                <p> {{'Date Listed:' | translate}} 02/05/2019</p>
+              </ion-col>
+   <div class="edit" (click)="editProperty(property)">
+     <p>{{'Edit' | translate}}</p>
+   </div>
+      </ion-row>
+
+    </ion-col>
+  </ion-row>
+    
+</ion-grid>
+<!-- INFINITY SCROLLER -->
+<ion-infinite-scroll (ionInfinite)="doInfinite($event,currentPage)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>
+<!-- INFINITY SCROLLER END -->
+</ion-content>

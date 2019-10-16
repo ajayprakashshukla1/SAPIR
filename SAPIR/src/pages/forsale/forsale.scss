@@ -1,0 +1,92 @@
+page-forsale {
+    .for_sale .toolbar-title {
+        font-size: 20px;
+        color: #008ee9;
+    }
+    .album.grid {
+        padding: 0px;
+    }
+    .segment {
+        height: 100%;
+        max-height: 60px;
+    }
+    .segment-button {
+        height: 100%;
+        min-height: 60px;
+    }
+    
+   .segment-button {
+        border: none !important;
+        box-shadow: 0px -1px 5px 0px #e2dfdf;
+        margin-top: 12px;
+        border-radius: 0px !important;
+        background-image: linear-gradient(#ececec, #f5f5f58f);
+        min-height: 100px;
+        padding: 43px 0px;
+        font-size: 18px !important;
+        color: #008cec !important;
+        font-weight: 500;
+    }
+    .segment-button.segment-activated {
+        background-color: transparent !important;
+        border-bottom: 8px solid #008cec !important;
+    }
+    .album {
+        margin-top: 25px;
+    }
+    
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          margin: auto;
+          width: 100%;
+        }
+      
+        .card-title {
+            position: absolute;
+            bottom: 40px;
+            left: 20px !important;
+            font-size: 2.0em;
+            font-weight: bold;
+            color: #fff;
+        }
+      
+        .card-subtitle {
+            font-size: 18px;
+            position: absolute;
+            bottom: 17px;
+            color: #fff;
+            left: 47px;
+        }
+        .heart_img {
+            position: absolute;
+            top: 19px;
+            right: 30px;
+        }
+        .heart_img img {
+            height: 27px;
+            width: 34px;
+        }
+        .bottom_img_sec {
+            position: absolute;
+            bottom: 14px;
+            right: 15px;
+            display: inline-block;
+            min-width: 100px;
+        }
+        span img {
+            width: 18px;
+            display: inline-block;
+        }
+        .bottom_img_sec span {
+            font-size: 20px;
+            color: #fff;
+        }
+        img.recent_img_sec {
+            min-height: 200px;
+            height: 100%;
+        }      
+}  
+}

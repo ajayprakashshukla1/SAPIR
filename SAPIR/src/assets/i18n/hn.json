@@ -1,0 +1,22 @@
+{
+  "HOME": "घर",
+  "ABOUT": "बारे में",
+  "CONTACT": "संपर्क",
+  "HI" : "नमस्ते {{name}}",
+  "AGE" : "उम्र: {{age}}",
+  "SELECT_LANGUAGE": "भाषा चुनिए",
+  "LANGUAGES": "हिंदी",
+  "CANCEL": "रद्द करें",
+  "FOLLOW_US_TW": "अनुसरण करो",
+  "INDIA":"भारत",
+  "setting":"व्यवस्था",
+  "MY LISTINGS":"मेरी सूची",
+  "MESSAGE":"संदेश",
+  "FAVORITES":"पसंदीदा",
+  "PROPERTIES FOR SELL":"सेल के लिए संपत्ति",
+  "PROPERTIES FOR RENT":"किराए के लिए प्रावधान",
+  "RENT OUT":"किराया पर चढ़ाया",
+  "SELL OUT":"बिक्री कर देना",
+  "FORM":"प्रपत्र"
+
+}

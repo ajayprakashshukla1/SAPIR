@@ -1,0 +1,44 @@
+<!--
+  Generated template for the TermprivacyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header padding [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menu_icon"></ion-icon>
+    </button>
+        <ion-title Class="for_sale">
+            <img src="assets/imgs/logosapir.png" class="logo_sec">
+        </ion-title>
+      <!-- <img src="assets/imgs/search.png" class="serach"> -->
+  </ion-navbar>
+  <div class="language_selector">
+    <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" placeholder="{{ 'SELECT_LANGUAGE' | translate }}" [cancelText]="'CANCEL' | translate" [okText]="'OK'  | translate">
+      <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name | translate}}</ion-option>
+    </ion-select>
+  </div>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="termsprivacy">
+      <ion-col col-12>
+        <h5>{{'Terms and Privacy' | translate}}</h5>
+        <div [innerHTML]="content"></div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="footer_sec" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+    <ion-toolbar>
+      <ion-title class="title_img_sec">
+        <img src="assets/imgs/logosapir.png">
+        <a href="https://www.facebook.com/sapirnadlan1/" class="social_icons"><ion-icon  name="logo-facebook"></ion-icon></a>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>

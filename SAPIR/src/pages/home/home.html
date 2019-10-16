@@ -1,0 +1,275 @@
+<ion-header padding class="home_header">
+  <ion-navbar> 
+    <button menuToggle icon-only>
+      <ion-icon name="menu" class="menu_icon"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/imgs/logosapir.png" class="logo_img">
+    </ion-title>
+    <div class="language_selector" end>
+      <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" placeholder="{{ 'Set Language' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+        <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name | translate}}</ion-option>
+      </ion-select>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding class="home_content" (click)="doSomething($event)" class="full_app_css">
+    <form  [formGroup]="homeForm" (ngSubmit)="sendData(homeForm.value,'1')" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+      <img src="assets/imgs/home_img.png" class="home_img">
+  <div>
+     
+
+  <ion-grid  class="img_padd" padding>
+      <ion-input formControlName="token" type="hidden" value="{{token}}"></ion-input>
+      <ion-input formControlName="paged" type="hidden" value="1"></ion-input>
+      <ion-row class="border_box">
+          <ion-col col-12 no-padding text-center>   
+       <span (click)="setPropertyType('Rent',homeForm.value)"  [ngClass]="{'rent_text' : (propertyType=='Rent')}">{{'Rent' | translate}}</span><span>/</span><span (click)="setPropertyType('sell',homeForm.value)"  [ngClass]="{'rent_text' : (propertyType=='sell')}">{{'Sell' | translate}}</span>
+          </ion-col>
+          <ion-col col-12 class="drop_padding desktop_view">
+               <div>
+                 <ion-item class="item-stable"
+                           (click)="toggleGroup()" class="drop_down_icon">
+                           <ion-icon *ngIf="isGroupShown()" name="md-arrow-dropup"></ion-icon>
+                           <ion-icon [hidden]="isGroupShown()" name="md-arrow-dropdown"></ion-icon>
+                   &nbsp;
+                   <span class="neighbor">{{'Select City' | translate}}</span>
+                 </ion-item>   
+               </div>
+        </ion-col>
+          <ion-col col-12 class="drop_padding mobile_view">
+             <ion-list> 
+                 <div>
+                     <ion-row class="city_home">  
+                         <ion-col col-12 class="rent">
+                            <ion-item no-lines>
+                          <ion-label>{{'Select City' | translate}}</ion-label>
+                            <ion-select [selectOptions]="selectOptions" formControlName="city" placeholder="{{'Select City' | translate }}" multiple="true" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                             <ion-option *ngFor="let citydetails of citys" value="{{citydetails.city}}">{{citydetails.city | translate}}</ion-option>
+                           </ion-select>
+                          </ion-item>
+                         </ion-col>
+                       </ion-row>
+                 </div>
+             </ion-list>
+          </ion-col>      
+        </ion-row>
+
+ <ion-row class="floorsec">
+    <div class="text_sec">
+        <p>{{'Floor' | translate}}</p>
+    </div>
+    
+  <ion-col col-6 class="bedrooms">
+      <ion-item no-lines>
+          <ion-label>{{'Floor' | translate}}</ion-label>
+            <ion-select interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="minfloor" placeholder="{{'From' | translate  }}"  [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+              <ion-option value="0">{{'Ground level' | translate}}</ion-option>
+              <ion-option *ngFor="let num of numbers" value="{{num}}">{{num}}</ion-option>
+          </ion-select>
+    </ion-item>
+</ion-col>
+<ion-col col-6 class="bedrooms">
+  <ion-item no-lines>
+      <ion-label>{{'Floor' | translate}}</ion-label>
+        <ion-select  interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}"   formControlName="maxfloor"  placeholder="{{'To' | translate}}"  [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+          <ion-option value="0">{{'Ground level' | translate}}</ion-option> 
+          <ion-option *ngFor="let num of numbers" value="{{num}}">{{num}}</ion-option>
+        </ion-select>
+    </ion-item>
+</ion-col>
+  </ion-row>
+
+  <ion-row class="floorsec">
+      <div class="text_sec">
+          <p>{{'Room' | translate}}</p>
+      </div>
+     
+    <ion-col col-6 class="bedrooms">
+        <ion-item no-lines>
+            <ion-label>{{'Room' | translate}}</ion-label>
+              <ion-select interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="minRoom"  placeholder="{{'From' | translate  }}"  [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                <ion-option  value="1">Studio</ion-option>    
+                <ion-option *ngFor="let num of minrooms" value="{{num}}">{{num}}</ion-option>
+              </ion-select>
+        </ion-item>
+     </ion-col>
+     <ion-col col-6 class="bedrooms">
+      <ion-item no-lines>
+          <ion-label>{{'Room' | translate}}</ion-label>
+            <ion-select interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}"  formControlName="maxRoom" placeholder="{{'To' | translate}}"  [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+              <ion-option  value="1">Studio</ion-option>      
+              <ion-option *ngFor="let num of rooms" value="{{num}}">{{num}}</ion-option>
+            </ion-select>
+         </ion-item>   
+</ion-col>
+    </ion-row>
+     <ion-row class="floorsec" *ngIf="propertyType=='Rent'" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}"> 
+        <div class="text_sec" >
+            <p>{{'Price' | translate}}</p>
+        </div>
+     
+<ion-col col-6 class="bedrooms">
+<ion-item no-lines>
+  <ion-label>{{'Select Max Price' | translate}}</ion-label>
+      <ion-select interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="minPrice" placeholder="{{'From' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+          <ion-option *ngFor="let maxRentPrice of maxRentPriceList" value="{{maxRentPrice}}">{{maxRentPrice}}</ion-option>
+      </ion-select>
+</ion-item>
+</ion-col>
+<ion-col col-6 class="bedrooms">
+<ion-item no-lines>
+    <ion-label>{{'Select Min Price' | translate}}</ion-label>
+      <ion-select interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="maxPrice"  placeholder="{{'To' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+          <!-- <ion-option value="">{{'Select Min Price' | translate}}</ion-option>     -->
+        <ion-option *ngFor="let minRentPrice of minRentPriceList" value="{{minRentPrice}}">{{minRentPrice}}</ion-option>
+      </ion-select>
+</ion-item>  
+</ion-col>
+  </ion-row>
+  <ion-row class="floorsec" *ngIf="propertyType=='sell'">
+      <div class="text_sec">
+          <p>{{'Price' | translate}}</p>
+      </div>
+     
+    <ion-col col-6 class="bedrooms">
+        <ion-item no-lines>
+          <ion-label>{{'Select Max Price' | translate}}</ion-label>
+            <ion-select interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="minPrice"  placeholder="{{'From' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                <!-- <ion-option value="">{{'Select Max Price' | translate}}</ion-option>    -->
+                <ion-option *ngFor="let maxSellPrice of maxSellList" value="{{maxSellPrice}}">{{maxSellPrice}}</ion-option>
+            </ion-select>
+          </ion-item>  
+    </ion-col>
+    <ion-col col-6 class="bedrooms">
+      <ion-item no-lines>
+          <ion-label>{{'Select Min Price' | translate}}</ion-label>
+            <ion-select interface="popover" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="maxPrice" placeholder="{{'To' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                <!-- <ion-option value="">{{'Select Min Price' | translate}}</ion-option>     -->
+                <ion-option *ngFor="let minSellPrice of minSellList" value="{{minSellPrice}}">{{minSellPrice}}</ion-option>
+            </ion-select>
+         </ion-item>   
+</ion-col>
+  </ion-row>
+<ion-row>
+  <ion-col col-12 text-center class="search" no-padding>
+    <button ion-button class="view_map search">{{'SEARCH' | translate}}</button>
+</ion-col>
+ 
+      <ion-col col-6 text-center>
+        <button ion-button type="button" (click)="advanceFilter()" class="view_map advance_filter">{{'ADVANCED FILTER' | translate}}</button>
+      </ion-col>
+      <ion-col col-6 class="price-filter" text-center>
+        <ion-select interface="popover" (ionChange)="sendData(homeForm.value,'6')" formControlName="sortFilter" placeholder="{{'SORT' | translate}}">
+          <ion-option value="date">{{'Date' | translate}}</ion-option>
+          <ion-option value="price-high">{{'Price (High)' | translate}}</ion-option>
+          <ion-option value="price-low">{{'Price (Low)' | translate}}</ion-option>
+        </ion-select>
+    </ion-col>
+</ion-row>
+
+<ion-row >
+  <ion-col *ngIf="errMsg" col-12>
+      <p class="errMsg">{{errMsg}}</p>
+  </ion-col>
+</ion-row>
+
+</ion-grid>
+</div>
+
+
+ 
+</form>
+
+
+<!-- Code STARTED HERE -->
+
+<h3 text-center>{{titlechange | translate}}</h3>
+<ion-segment [(ngModel)]="pet" (ionChange)="CheckMap()" class="segment_list " [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+    <ion-segment-button value="featured">
+    <span><img src="assets/imgs/list_view.png"></span><span class="list_view">{{'List View' | translate}}</span>
+    </ion-segment-button>
+    <ion-segment-button value="albums">
+        <span><img src="assets/imgs/map1.png"></span><span class="list_view">{{'Map View' | translate}}</span>
+    </ion-segment-button>
+  </ion-segment>
+  
+  <div [ngSwitch]="pet">
+
+      <ion-grid class="album card-background-page" *ngSwitchCase="'featured'">
+          
+      <ion-row  class="img_box_sec" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+            <ion-col col-12 col-lg-6 class="main_column" no-padding *ngFor="let property of properties; let i=index" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+
+                    <ion-row>
+                            <ion-col col-12 no-padding>
+                                    <!-- <img src="{{property.thumbnail}}"> -->
+                                    <ion-slides  #slide class="image-slider main-slider" id="img_slider" loop="true" slidesPerView="1">
+                                      <ion-slide *ngFor="let img of property.images">
+                                        <img  src="{{img}}" (click)="openPropertyDetail(property)" class="large_image"  />
+                                  </ion-slide>
+                                  </ion-slides>
+                                  
+                                  <ion-icon name="ios-arrow-back-outline" (click)="slidePrev(i)" class="back_icon"></ion-icon>
+                                  <ion-icon name="ios-arrow-forward-outline" (click)="slideNext(i)" class="for_icon"></ion-icon> 
+                            </ion-col>
+                          </ion-row>
+              <ion-row class="heart_content_sec">
+                <ion-col col-10 no-padding>
+                        <p>{{property.title}}</p>
+                    </ion-col>
+                    <ion-col col-2 class="heart_img" no-padding>
+                        <button class="form_doc" *ngIf="property.status !== 1" ion-button icon-left (click)="favorite(property,1)" clear item-left>
+                            <ion-icon  name="heart"></ion-icon>
+                        </button> 
+                        <button class="form_doc like" color="danger" *ngIf="property.status == 1" ion-button icon-left (click)="favorite(property,0)" clear item-left>
+                            <ion-icon  name="heart"></ion-icon>
+                        </button>	 
+                    </ion-col>
+        </ion-row>
+       
+        <ion-row class="person_city">
+            <ion-col col-1 no-padding>
+                <!-- <ion-icon name="ios-person-outline"></ion-icon> -->
+                <img src="assets/imgs/building.png">
+            </ion-col>
+            <ion-col col-11 no-padding>
+                <span>{{property.city | translate}}</span>
+            </ion-col>
+        </ion-row>  
+        <ion-row class="address_new">
+          <ion-col col-1 no-padding>
+            <ion-icon name="pin"></ion-icon>
+          </ion-col>
+          <ion-col col-11 no-padding>
+            <span>{{property.area | translate}}</span>
+          </ion-col>
+      </ion-row>  
+            <ion-row class="list_view_img_sec" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+                    <ion-col col-7>
+                        <div class="bottom_img_sec">
+                          <span>
+                            <img src="assets/imgs/8.png"> &nbsp;<strong>{{property.bedrooms}}</strong></span>&nbsp;
+                            <span><img src="assets/imgs/7.png">&nbsp;<strong>{{property.bathrooms}}</strong></span>&nbsp;
+                            <span><img src="assets/imgs/building.png">&nbsp;<strong>{{property.floor}}</strong></span>
+                        </div>
+                    </ion-col>   
+                    <ion-col col-5 text-right>
+                    <span>{{property.price}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+      </ion-row>
+      <!-- INFINITY SCROLLER -->
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event,propPage)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+  <!-- INFINITY SCROLLER END  -->
+      </ion-grid>
+      
+      <ion-grid class="album map_grid" *ngSwitchCase="'albums'">
+          <div #map id="map"></div>
+      </ion-grid>
+      </div>
+</ion-content>
+

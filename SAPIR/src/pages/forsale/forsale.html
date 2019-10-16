@@ -1,0 +1,76 @@
+<!--
+  Generated template for the ForsalePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header padding>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menu_icon"></ion-icon>
+    </button>
+        <ion-title Class="for_sale">
+          <img src="assets/imgs/logosapir.png" class="logo_img">
+        </ion-title>
+      <!-- <img src="assets/imgs/search.png" class="serach"> -->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding>
+    <ion-segment [(ngModel)]="pet">
+        <ion-segment-button value="featured">
+         RECENT
+        </ion-segment-button>
+        <ion-segment-button value="albums">
+          VIEW MAP
+        </ion-segment-button>
+      </ion-segment>
+      <div [ngSwitch]="pet">
+          <ion-grid class="album card-background-page" *ngSwitchCase="'featured'">
+            <ion-card>
+              <img src="assets/imgs/sale_img1.png" class="recent_img_sec">
+              <div class="heart_img">
+                <img src="assets/imgs/heart.png">
+              </div>
+              <div class="card-title">$ 1,354,000</div>
+              <div class="card-subtitle">12356 Fleet Street</div>
+              <div class="bottom_img_sec">
+               <span>3 &nbsp;<img src="assets/imgs/bed.png"></span>&nbsp; &nbsp;
+               <span>2 &nbsp;<img src="assets/imgs/bath_tub.png"></span>
+            </div>
+            </ion-card>
+            <ion-card>
+              <img src="assets/imgs/sale_img2.png" class="recent_img_sec">
+              <div class="heart_img">
+                  <img src="assets/imgs/heart.png">
+                </div>
+              <div class="card-title">$ 1,354,000</div>
+              <div class="card-subtitle">12356 Fleet Street</div>
+              <div class="bottom_img_sec">
+                  <span>3 &nbsp;<img src="assets/imgs/bed.png"></span>&nbsp; &nbsp;
+                  <span>2 &nbsp;<img src="assets/imgs/bath_tub.png"></span>
+               </div>
+            </ion-card>
+          
+            <ion-card>
+              <img src="assets/imgs/sale_img3.png" class="recent_img_sec">
+              <div class="heart_img">
+                  <img src="assets/imgs/heart.png">
+                </div>
+              <div class="card-title">$ 1,354,000</div>
+              <div class="card-subtitle">12356 Fleet Street</div>
+              <div class="bottom_img_sec">
+                  <span>3 &nbsp;<img src="assets/imgs/bed.png"></span>&nbsp; &nbsp;
+                  <span>2 &nbsp;<img src="assets/imgs/bath_tub.png"></span>
+               </div>
+            </ion-card>
+          
+          </ion-grid>
+          
+          <ion-grid class="album" *ngSwitchCase="'albums'">
+              <p>vishal</p>
+              <p>hgdeh</p>
+          </ion-grid>
+          </div>
+</ion-content>

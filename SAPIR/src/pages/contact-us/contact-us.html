@@ -1,0 +1,65 @@
+<ion-header padding>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menu_icon"></ion-icon>
+    </button>
+        <ion-title Class="for_sale">
+            <img src="assets/imgs/logosapir.png" class="logo_img">
+        </ion-title>
+        <div class="language_selector" end>
+          <!-- <ion-label>{{ 'SELECT_LANGUAGE' | translate }}</ion-label> -->
+          <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" placeholder="{{ 'Set Language' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+            <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name | translate}}</ion-option>
+          </ion-select>
+        </div>
+      <!-- <img src="assets/imgs/search.png" class="serach"> -->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="lightest-bg">
+
+
+<ion-grid fixed class="contact-content">
+ <div class="top_center" text-center>
+  <ion-row>
+    
+    <ion-col col-12 class="connect contact_list">
+         
+        <h3>{{'Contact Us' | translate}}</h3>
+        <h4 ion-text color="dark">israel.eliya2@gmail.com</h4>
+        <h4 ion-text color="dark" (click)="calling(contactDetails.contact_us_phone_number)">{{contactDetails.contact_us_phone_number}}</h4>
+
+    </ion-col>
+
+    <ion-col [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" col-12 class="connect contact_list">
+        <h3>{{'Location' | translate}}</h3>
+        <h4 [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">{{'145 OKeren Hayesod 6, Qiryat Bialik, Israel' |translate}}</h4>
+      
+        <h4 (click)="calling(contactDetails.contact_us_location_phone)">{{contactDetails.contact_us_location_phone}}</h4>
+      <h3>{{'Connect' | translate}}</h3>
+
+      <ul>
+        <li><ion-icon (click)="goSocilaMedia('https://www.facebook.com/sapirnadlan1/')" name="logo-facebook"></ion-icon></li>
+      </ul>
+    </ion-col>
+
+  </ion-row>
+ </div>  
+</ion-grid>
+
+</ion-content>
+<ion-footer class="footer_sec" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+  <ion-toolbar>
+      <ion-title class="title_img_sec">
+        <img src="assets/imgs/logosapir.png">
+      </ion-title>
+      <ion-buttons end class="social_icons">
+        <button ion-button color="save"  (click)="goSocilaMedia('https://www.facebook.com/sapirnadlan1/')">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <!-- <ion-icon (click)="goSocilaMedia()" name="logo-googleplus"></ion-icon>
+            <ion-icon (click)="goSocilaMedia()" name="logo-instagram"></ion-icon> -->
+        </button>
+      </ion-buttons> 
+    </ion-toolbar>
+</ion-footer>

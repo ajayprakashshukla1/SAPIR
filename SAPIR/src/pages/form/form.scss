@@ -1,0 +1,273 @@
+page-form {
+    .for_sale .toolbar-title {
+        font-size: 20px;
+        color: #008ee9;
+    }
+    .scroll-content {
+        padding-top: 0px !important;
+    }
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          margin: auto;
+          width: 100%;
+        }
+      
+        .card-title {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          color: #fff;
+        }
+      
+        // .card-subtitle {
+        //   font-size: 1.0em;
+        //   position: absolute;
+        //   top: 52%;
+        //   width: 100%;
+        //   color: #fff;
+        // }
+        .card-title h1 {
+            font-weight: 600 !important;
+            letter-spacing: 1.5px;
+            font-size: 24px;
+        }
+        .card-title p {
+            font-size: 20px !important;
+            width: 80%;
+            margin: auto;
+            margin-top: 12px;
+            color: #fff;
+        }
+       
+    }
+      img.logo_sapir {
+        width: 60%;
+        margin: auto;
+        padding-top: 17px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    .box_shadow{
+        position: absolute;
+        bottom: -80px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        max-width: 87%;
+        width: 100%;
+        margin: auto;
+        box-shadow: 0px 0px 13px #afadad;
+        border-radius: 10px;
+        height: auto;
+        text-align: center;
+  }
+  p.complete_text {
+    padding: 22px 0px;
+    font-size: 20px;
+    padding-left: 12px;
+    border-bottom: 1px solid;
+    padding-bottom: 14px;
+    color: #c6c6c6;
+    margin: auto;
+}
+.rent_out .button {
+    background: transparent;
+    color: #0090e6;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.rent_out_border{
+    border-radius: 0px !important;
+    margin: auto;
+    padding: 26px;
+    height: 100%;
+}
+ion-row.bottom_bg_clr.row {
+    background: #ecf1f5;
+}
+img.form_doc {
+    position: absolute;
+    max-width: 25%;
+    width: 100%;
+    top: 20%;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+@media screen and (min-width:320px) and (max-width:412px){
+     p.complete_text {
+        font-size: 15px;
+    } 
+    .rent_out .button {
+        font-size: 15px;
+    }
+    .rent_out_border {
+        border-right: 0px;
+        margin: auto;
+        padding: 0px;
+        height: 100%;
+    }
+    .rent_out_border .button-inner {
+        padding: 18px 15px;
+        // border-right: 1px solid;
+    }
+}
+
+@media screen and (max-width:320px){
+   .card-background-page .card-title p {
+        font-size: 16px !important;
+    }
+}
+.header-md .title-md .toolbar-title-md {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.button-md {
+    box-shadow: 0px 0px;
+}
+
+@media screen and (min-width:1024px){
+    .header {
+        display: none;
+    }
+    .scroll-content {
+        padding: 0px !important;
+    }
+    .grid {
+        padding: 0px;
+    }
+    .box_shadow {
+        top: 50px;
+        right: 60px;
+        max-width: 40%;
+        width: 100%;
+        bottom: auto;
+        height: auto;
+        left: auto;
+        min-height: 20%;
+    }
+    img.form_doc {
+        max-width: 18%;
+        width: 100%;
+        top: 20px;
+        left: 50px;
+        margin-left: 50px;
+        margin-top: auto;
+        margin-bottom: auto;
+        bottom: 20px;
+        margin-right: 50%;
+}
+.about_img {
+    display: none;
+}
+.card-background-page .card {
+    min-height: 436px;
+    height: 100%;
+    background: #00a2fe;
+}
+
+   .rent_out_border {
+    height: auto;
+} 
+.card-title {
+    display: none;
+}
+img.logo_sapir {
+    width: 50%;
+    margin: auto;
+    padding-top: 35px;
+}
+ .rent_out .button {
+    padding: 35px 100px;
+}
+ p.complete_text {
+    padding: 50px 0px;
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+button.button.button-default {
+    margin: 0px;
+    height: auto;
+}
+button.button-default:hover {
+    background: transparent !important;
+}
+.form_text_content h1 {
+    color: #0092e3;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding: 40px 0px;
+    padding-bottom: 18px;
+    margin-bottom: 0px;
+}
+.form_text_content p {
+    color: #0090e6;
+    font-size: 18px;
+    max-width: 50%;
+    width: 100%;
+    margin: auto;
+    padding: 21px 0px;
+}
+}
+
+@media screen and (min-width:1200px) and (max-width:1920px){
+    .rent_out .button {
+        padding: 35px 84px;
+    }
+    .box_shadow {
+        max-width: 60%;
+        width: 100%;
+    }
+     p.complete_text {
+        font-size: 32px;
+    }
+     .box_shadow {
+        margin-top: -20px;
+    }
+}
+@media screen and (max-width:1023px){
+    .form_text_content {
+        display: none;
+    }
+}
+@media screen and (min-width:600px) and (max-width:1023px){
+    img.form_doc {
+        max-width: 16%;
+    }
+    .card-background-page .card-title {
+        margin-top: 40px;
+    }
+    img.about_img {
+        max-height: 523px;
+    }
+}
+@media screen and (min-width:1024px) and (max-width:1199px){
+    img.about_img {
+        max-height: 523px;
+    }
+     p.complete_text {
+        font-size: 21px;
+    }
+    .rent_out .button {
+        padding: 25px 16px;
+    }
+}
+
+.rent_out_sec {
+    border-top: 1px solid #ccc;
+    }
+
+    .rent_out:first-child {
+        border-right: 1px solid #ccc;
+        }
+        .rent_out_sec [col-6] {
+            margin: auto;
+        }
+}

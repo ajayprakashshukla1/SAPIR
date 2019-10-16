@@ -1,0 +1,30 @@
+page-property-on-map {
+    #map{
+        width: 100%;
+        height: 100%;
+    }
+    .mapImg{
+        width: 100%;
+        height: 20%;
+    }
+    .mapDiv{
+        // width: 40px;
+        // height: 40px;
+    }
+    .gm-style-iw div {
+        min-width: 100%;
+    }
+    p.price {
+        font-weight: 500;
+        color: #0092e3;
+    }
+    //for android css//
+    .header-md .title-md .toolbar-title-md {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    //end//
+    }
+    

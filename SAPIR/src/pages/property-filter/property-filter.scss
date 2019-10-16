@@ -1,0 +1,81 @@
+page-property-filter {
+    .button-round {
+        padding: 0px;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background: #00a5fb;
+        color: #fff;
+        font-size: 30px !important;
+    }
+    .list> .item-block:first-child {
+        border-top: 0px;
+        }
+        .filter_top_border .item-inner {
+            border-bottom: 0px !important;
+            }
+        .list-form {
+            box-shadow: 0px 0px 6px #00a5fb;
+            border-radius: 6px;
+            padding: 12px 6px;
+            }
+            .form_label .label {
+                font-size: 14px;
+                color: #00a5fb;
+                }
+                .filterdropdown .label {
+                    font-size: 14px;
+                    color: #999;
+                    }
+            .list-md .item-block .item-inner {
+                box-shadow: 0px 0px 0px !important;
+            }
+            .range-md .range-knob {
+                background: #00a5fb;
+            }
+            .range-md .range-bar-active {
+                background: #00a5fb;
+            }
+            //for android css//
+            .header-md .title-md .toolbar-title-md {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+            .mirrorContent .select .select-icon {
+                left: 12px !important;
+            }
+            .mirrorContent .text-input {
+                direction: rtl;
+            }
+            .mirrorContent .label {
+                direction: rtl;
+                padding-right: 0px !important;
+            }
+            .ar{
+                direction: rtl;
+            }
+            
+            .en{
+                direction: ltr;
+            }
+            ion-alert.ar .alert-checkbox-icon {
+                left: -14px;
+                top: 0;
+                border-radius: 2px;
+                position: relative;
+                width: 16px;
+                height: 16px;
+                border-width: 2px;
+                border-style: solid;
+                border-color: #787878;
+            }
+            .mirrorContent .select-placeholder {
+                font-size: 14px !important;
+            }
+            .mirrorContent .select-text {
+                font-size: 14px;
+            }
+    //end//
+}

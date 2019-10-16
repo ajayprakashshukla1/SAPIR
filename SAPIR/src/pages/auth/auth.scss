@@ -1,0 +1,132 @@
+page-auth,
+.auth {
+  .grid {
+    padding: 0;
+    .col {
+      padding: 0;
+    }
+  }
+
+  .btn-group {
+    .button-ios,
+    .button-md {
+      border-radius: 0;
+      &:first-of-type {
+        border-radius: 2px 0 0 2px;
+      }
+      &:last-of-type {
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+
+  .scroll-content {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    .auth-content {
+      width: 80%;
+
+      .logo {
+        width: 180px;
+        height: 80px;
+        margin: 40px auto 0;
+      }
+
+      .list-form {
+        padding: 0;
+        margin-bottom: 0;
+
+        ion-item {
+          background: none;
+          padding: 0;
+
+          &:first-child {
+            border-top: none;
+          }
+
+          &:after {
+            display: none;
+          }
+
+          ion-label {
+            font-size: 1em;
+            color: color($colors, light);
+            &.label-ios,
+            &.label-md {
+            	margin-top: 0;
+            }
+          }
+
+          input {
+            color: color($colors, light);
+          }
+        }
+      }
+    }
+  }
+  .scroll-content {
+  will-change: initial !important;
+  -webkit-overflow-scrolling: initial !important;
+}
+}
+.segment-button.segment-activated {
+    color: #fff !important;
+    background-color: #0092e3 !important;
+}
+.segment {
+    border: 1px solid #0090e6;
+}
+.segment-button {
+    color: #0090e6 !important;
+}
+#loginForm .item-block {
+    color: #000 !important;
+}
+#loginForm .label {
+    color: #000;
+}
+#registerForm .label {
+    color: #000;
+}  
+#loginForm .text-input {
+    color: #000 !important;
+}
+#registerForm .text-input {
+  color: #000 !important;
+}
+#loginForm strong {
+    color: #0090e6;
+}
+.button-outline {
+    border-color: #008ee9;
+    color: #0090e6;
+    background-color: transparent;
+}
+#loginForm .text {
+    color: #000;
+}
+#registerForm .text {
+  color: #000;
+}
+.button-default {
+    background: #0090e6;
+}
+
+// .scroll-content {
+//   will-change: initial !important;
+//   -webkit-overflow-scrolling: initial !important;
+// }
+@media (min-width: 768px) {
+
+	page-auth,
+	.auth {
+	  .scroll-content {
+	    .auth-content {
+	      width: 40%;
+	    }
+	  }
+	}
+
+}

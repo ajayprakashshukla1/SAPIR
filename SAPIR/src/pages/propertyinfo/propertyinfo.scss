@@ -1,0 +1,526 @@
+page-propertyinfo {
+    .card {
+        width: 100% !important;
+        margin: auto !important;
+    }
+    .scroll-content {
+        padding-top: 0px !important;
+    }
+    .form_doc {
+        position: absolute;
+        top: 0px;
+        right: 7px;
+        padding-left: 0px;
+        font-size: 25px;
+        font-weight: 600;
+        padding-right: 0px;
+        color: #fff;
+    }
+    .home_img_text {
+        position: absolute;
+        bottom: 20px;
+        color: #fff;
+        left: 16px;
+    }
+    span.new {
+        font-size: 16px;
+        border: 2px solid;
+        min-width: 100px;
+        display: inline-block;
+        min-height: 35px;
+        padding-top: 8px;
+        text-align: center;
+        position: relative;
+        top: 2px;
+        }
+    span.openjuly {
+        background: #fff;
+        min-width: 100px;
+        display: inline-block;
+        min-height: 35px;
+        padding-top: 12px;
+        text-align: center;
+        color: #000;
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: -4px;
+    }
+    .property_block img {
+        padding: 9px;
+        padding-top: 17px;
+        max-width: 100px;
+        width: 100%;
+        min-height: 80px;
+        height: 100%;
+        object-fit: cover;
+    }
+    .dollar_numbers p {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        margin-top: 0px;
+    }
+    .months_add {
+        margin: auto;
+        border: 3px solid #00a4fb;
+        min-height: 46px;
+        margin-top: 20px;
+    }
+    .months_add p {
+        font-size: 17px;
+        margin: 0px;
+        margin: 9px 4px;
+        text-align: center;
+        color: #00a4fb;
+        font-weight: 600;
+    }
+    .dollar_text_padding.row {
+        padding: 8px;
+    }
+    .address_sec [col-1] {
+        margin: auto;
+    }
+    .address_sec p {
+        margin-left: 9px;
+        font-size: 17px;
+        color: #c7c6c6;
+        font-weight: 500;
+    }
+    .border_img_sec.row {
+        /* padding: 12px; */
+        border: 2px solid #e6e2e2;
+        min-height: 62px;
+    }
+    .border_img_sec [col-4] {
+        text-align: center;
+        padding: 15px 0px !important;
+    }
+    .border_img_sec img {
+        width: 23px;
+        /* margin: auto; */
+    }
+    .border_img_sec span {
+        font-size: 20px;
+        position: relative;
+        top: -3px;
+        padding: 8px;
+    }
+    .bath_tub_border.col {
+        border-left: 2px solid #e6e2e2;
+        border-right: 2px solid #e6e2e2;
+    }
+    .address_sec{
+        padding: 0px 10px;
+    }
+    .space_rooms_border {
+        border-top: none !important;
+        /* font-size: 12px !important; */
+    }
+    span.space_text {
+        font-size: 13px !important;
+        font-weight: 600;
+    }
+    .space_rooms_border [COL-6] {
+        padding: 22px 5px !important;
+    }
+    .content_text.row {
+        padding: 23px 1px;
+        padding-bottom: 0px;
+    }
+    .AMMNETIES.row {
+        padding: 0px 18px;
+        border-bottom: 1px solid #e6e2e2;
+        padding-bottom: 20px;
+    }
+    .content_text p {
+        color: #c7c6c6;
+        font-weight: 500;
+        font-size: 17px;
+    }
+    .contact_user img {
+        border: 1px solid #e6e2e2;
+        padding: 6px;
+        background: #fff;
+        object-fit: cover;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+    }
+    .contact_user.col {
+        text-align: right;
+        position: relative;
+        bottom: 25px !important;
+        right: 16px;
+    }
+    .owner_info_sec.col {
+        padding: 13px 18px !important;
+    }
+    .owner_info_sec img {
+        max-width: 18px;
+    }
+    .owner_info_sec [col-1] {
+        padding-left: 0px;
+    }
+    .owner_info_sec span {
+        color: #c7c6c6;
+        font-size: 15px;
+    }
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          margin: auto;
+          width: 100%;
+        }
+      
+        .card-title {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            font-size: 18px;
+            color: #fff;
+            top: 0px;
+            right: 0px;
+            max-height: 35px;
+            height: 100%;
+            margin: auto;
+            padding-top: 7px;
+            max-width: 128px;
+            width: 100%;
+            background: #06a6f8;
+        }
+    }
+    .rent_now_sec {
+        background: #f6f6f6;
+        margin: 50px 0px;
+        min-height: 75px;
+    }
+    .view_map {
+        background: #06a6f8;
+        height: 40px;
+        border-radius: 0px;
+        font-size: 17px;
+        padding: 0px 9px;
+        max-width: 169px;
+        width: 100%;
+    }
+    .rent_text {
+        text-align: center;
+        margin-top: -28px;
+        margin-bottom: 38px;
+    }
+    .looking_for_text.col {
+        text-align: center;
+        background: #06a6f8;
+        height: 40px;
+        border-radius: 0px;
+        font-size: 14px;
+        padding: 0px;
+        max-width: 90%;
+        width: 100%;
+        color: #fff;
+        margin: auto;
+        margin-top: -18px;
+    }
+    #map2{
+    height: 250px;
+    width: 100%;
+        // width: 100%;
+        // height: 100%;
+    }
+    .content_text .light-mb {
+        padding-left: 0px;
+    }
+    .like {
+        color: red !important;
+    }
+        .image-container {
+            min-height: 150px;
+            max-height: 150px;
+            max-width: 100%;
+            width: 100%;
+            margin: auto;
+            padding: 18px 3px;
+            object-fit: cover;
+        }
+        .address_sec img {
+            max-width: 25px;
+            width: 100%;
+            }
+    @media screen and (min-width:1025px){
+        .for_sale .toolbar-title {
+            font-size: 40px;
+            color: #fff;
+            line-height: 44px;
+        }
+        .forword_icon{
+            position: absolute;
+            right: -22px;
+            top: 43%;
+            font-size: 40px;
+        }
+        .backword_icon{
+            position: absolute;
+            top: 43%;
+            font-size: 40px;
+            left: -26px;
+        }
+         .dollar_numbers p {
+            text-indent: 50px;
+        }
+        .address_sec [col-1] {
+            text-align: center;
+        }
+        // .lg_screen_bg{
+        //     background-image: url(../assets/imgs/bg-img.png);
+        //     background-position: center center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     padding: 40px !important;
+        // }
+        img.serach {
+            display: none;
+        }
+        img.home_img {
+            display: none;
+        }
+        .scroll-content {
+            padding: 0px !important;
+        }
+        .card_sec img {
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .property_block img {
+            padding: 0;
+            padding-top: 0;
+            max-width: 100%;
+            width: 100%;
+        }
+        .home_img_text {    
+            bottom: -80px;
+            right: 44px;
+            background: #00a4fb;
+            border: 2px solid #00a4fb;
+            border-top: 0;
+            left: auto;
+        }
+        .property_block {
+            max-width: 50%;
+        }
+         span.openjuly {
+            min-width: 200px;
+        }
+        span.new {
+            border: 2px solid;
+            min-width: 200px;
+        }
+        img.image-container {
+            min-height: 250px;
+            max-height: 250px;
+            max-width: 100%;
+            width: 100%;
+            margin: auto;
+            padding: 18px 12px;
+        }
+        .address_sec img {
+            max-width: 26%;
+            width: 100%;
+            }
+    }
+    @media screen and (min-width:768px){
+        .card {
+            width: 100% !important;
+            margin: auto !important;
+            max-width: 90%;
+        }
+        .slider_imgs{
+            max-width: 90%;
+            margin: auto;  
+        }
+        
+    }
+    @media screen and (min-width:768px) and (max-width:1200px){
+        .form_doc {
+            top: 0px;
+            right: 45px;
+        }
+    }
+
+    @media screen and (min-width:1201px){
+       .form_doc {
+            right: 90px;
+        }
+    }
+
+    @media screen and (max-width:1024px){
+        .slider_icons {
+            display: none;
+        }
+    }
+    img.thumb-img {
+        height: 200px;
+        max-width: 100%;
+        width: 100%;
+    }
+    .build_img img {
+        width: 16px !important;
+        height: auto;
+    }
+    .air_ammenity {
+        background: #24aef9;
+        padding: 8px;
+        text-align: center;
+        border-radius: 4px;
+        color: #fff;
+        position: relative;
+        margin: 0px 2px;
+    }
+    .air_ammenity:before {
+        content: "";
+        position: absolute;
+        background-image: url(/assets/imgs/White_check.png);
+        width: 12px;
+        height: 12px;
+        display: block;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    p.air_ammenity {
+        margin-bottom: 11px;
+    }
+
+    .back_icon {
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        font-size: 25px;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.53);
+        width: 30px;
+        height: 30px;
+        color: #ccc;
+        border-radius: 100%;
+        text-align: center;
+        padding-right: 5px;
+        padding-top: 2px;
+    }
+    .for_icon {
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        font-size: 25px;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.53);
+        width: 30px;
+        height: 30px;
+        color: #ccc;
+        border-radius: 100%;
+        text-align: center;
+        padding-right: 0px;
+        padding-top: 2px;
+    }
+    .address_sec [col-1] ion-icon {
+        font-size: 26px;
+        color: #24aef9;
+    }
+    .mirrorContent {
+        .dollar_text_padding {
+            direction: rtl;
+        }
+        .address_sec [col-11] {
+            width: 100% !important;
+            max-width: 80% !important;
+            direction: rtl;
+        }
+        .border_img_sec {
+            direction: rtl;
+        }
+        .content_text {
+            direction: rtl;
+        }
+        .AMMNETIES {
+            direction: rtl;
+        }
+        .owner_info_sec [col-11] {
+            max-width: 65% !important;
+            width: 100%;
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+        .owner_img_sec {
+            direction: rtl;
+            .contact_user {
+                right: 0px !important;
+            }
+        }
+        .tel_info p {
+            direction: ltr;
+            text-align: right;
+        }
+        .dollar_numbers p {
+            width: 400px;
+        }
+        .city_add {
+            padding-right: 6px !important;
+            white-space: normal;
+        }
+        .dollar_numbers p:nth-child(2) {
+            direction: ltr;
+            width: 100%;
+            max-width: 250px;
+            text-align: right;
+        }
+        .content_text.row {
+            padding: 23px 0px;
+        }
+        .looking_for_text p {
+            direction: rtl;
+        }
+    }
+    .heading {
+        padding: 0px 0px;
+    }
+    .AMMNETIES {
+        padding: 0px 0px !important;
+    } 
+    @media screen and (max-width:320px){
+        .contact_user img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+    .content_text ion-card-content {
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+    .content_text button {
+        font-size: 14px;
+    }
+ 
+    .share.col button img {
+        max-width: 20px;
+    }
+    
+    .share.col button {
+        background: #488afe;
+        padding: 5px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+    .share.col {
+        text-align: left;
+    }
+}
+

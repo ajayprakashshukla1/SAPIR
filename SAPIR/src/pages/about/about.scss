@@ -1,0 +1,120 @@
+page-about {
+    img.home_img {
+        margin-top: -22px;
+    }
+    // .rent_text{
+    //     font-family: Montserrat;
+    // }
+    .border_box.row {
+        position: absolute;
+        background: #f2f2f3e0;
+        max-width: 74%;
+        margin: auto;
+        left: 0px;
+        top: 35px;
+        right: 0px;
+        box-shadow: 0px 5px 5px #cac6c6;
+        padding-bottom: 25px;
+    }
+    .drop_down_icon .icon {
+        position: absolute;
+        right: 24px;
+        top: 26px;
+        color: #8a8a8a;
+    }
+    .item-stable {
+        background: transparent;
+        padding: 12px;
+    }
+    // .scroll-content{
+    //     background-image: url(../assets/imgs/about.png);
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     background-position: left;
+    // }
+    .about-block {
+        display: table-cell;
+        vertical-align: middle;
+
+        p {
+            font-size: 14px;
+            text-align: justify;
+            line-height: 20px;
+            font-style: italic;
+        }
+    }
+    .card {
+        margin-top: 0;
+        position: relative;
+        bottom: 17px;
+        max-width: 89%;
+        margin: auto;
+    }
+    .logo_img img {
+        max-width: 110px;
+        width: 100%;
+        position: absolute;
+        right: 20px;
+        bottom: 13px;
+        }
+        .about_content.col {
+            margin-bottom: 33px;
+        }
+    .logo_img {
+        text-align: right;
+    }
+    p.about {
+        font-style: normal !important;
+        font-size: 16px !important;
+        font-weight: 700;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        margin-left: 13px;
+    }
+    // .main {
+    //     display: table;
+    //     height: 100%;
+    //     padding: 0px 19px;
+    // }
+    .toolbar-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #00abfc;
+        pointer-events: auto;
+        text-transform: uppercase;
+    }
+    .header-md .title-md .toolbar-title-md {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    @media screen and (min-width:1024px){
+        .header {
+            display: none;
+        }
+        .about-block {  
+            text-align: center;
+        }
+        .about-block p {
+            font-size: 23px;
+            width: 100%;
+            max-width: 60%;
+            margin: auto;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            line-height: 30px;
+        }
+    }
+    ion-content{
+        .mirrorContent {
+            direction: rtl;
+        }
+    }
+    .mirrorContent img {
+        left: 20px !important;
+        right: auto !important;
+    }
+}

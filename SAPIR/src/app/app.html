@@ -1,0 +1,44 @@
+<ion-split-pane when="lg">
+<ion-menu [content]="content" type="overlay" side="left">
+  <ion-header [ngClass]="{'mirror' : (lan=='ar'),  'nomirror' : (lan !='ar')}">
+    <ion-toolbar menuClose class="toolbar_inner_sec">
+       <ion-title><ion-icon name="menu" class="side_bar_menu_icon"></ion-icon><span class="menu_inner_sec">{{'Menu' | translate}}</span></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list class="home_sec" [ngClass]="{'rtl' : (lan=='ar'),  'ltr' : (lan !='ar')}">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title | translate}}
+      </button>
+    </ion-list>
+     <ion-list class="propert_sec" [ngClass]="{'rtl' : (lan=='ar'),  'ltr' : (lan !='ar')}">
+          <ion-list-header no-margin>
+            <span ion-text color="dark" class="fw500">{{'your Property' | translate}}</span>
+          </ion-list-header>
+      <button  menuClose ion-item *ngFor="let p of yourProperty" (click)="openPage(p)" [ngClass]="{'rtl' : (lan=='ar'),  'ltr' : (lan !='ar')}">
+        <p class='menuNoWrap'>{{p.title  | translate}}</p>
+      </button>
+      <button *ngIf="role =='admin'" menuClose ion-item  (click)="openPage(admin)" [ngClass]="{'rtl' : (lan=='ar'),  'ltr' : (lan !='ar')}">
+        <p class='menuNoWrap'>{{admin.title | translate}}</p>
+      </button>
+     </ion-list>
+     <ion-list class="help_sec">
+        <ion-list-header no-margin [ngClass]="{'rtl' : (lan=='ar')}">
+            <span ion-text color="dark" class="fw500">{{'help' | translate}}</span>
+          </ion-list-header>
+      <button menuClose ion-item *ngFor="let p of help" (click)="openPage(p)" [ngClass]="{'rtl' : (lan=='ar'),  'ltr' : (lan !='ar')}">
+        {{p.title  | translate}}
+      </button>
+     </ion-list>
+
+     <ion-list class="help_sec" no-lines>
+      <button menuClose ion-item  (click)="logout()" class="logout" [ngClass]="{'rtl' : (lan=='ar'),  'ltr' : (lan !='ar')}">
+       {{'Logout' | translate}}
+      </button>
+      </ion-list>
+  </ion-content>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" main overlay #content swipeBackEnabled="false"></ion-nav>
+</ion-split-pane>

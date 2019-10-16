@@ -1,0 +1,189 @@
+
+<ion-header padding>
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" class="menu_icon"></ion-icon>
+      </button>
+          <ion-title Class="for_sale">
+            <img src="assets/imgs/logosapir.png" class="logo_img">
+          </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding>
+  <ion-grid no-padding>
+      <form [formGroup]="editForm" (ngSubmit)="sendData(editForm.value)">
+      <ion-input formControlName="token"  type="hidden" value="{{token}}"></ion-input>
+      <ion-input formControlName="propertyId" type="hidden"></ion-input>
+
+      <ion-row class="city_home" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+          <ion-col col-12 class="rent">
+                <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}"  formControlName="city" placeholder="Select city" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                        <ion-option *ngFor="let citydetails of citys" value="{{citydetails.city}}">{{citydetails.city | translate}}</ion-option>
+                </ion-select>   
+          </ion-col>
+        </ion-row>
+
+        <div *ngIf="section1" id="slide1">
+          <ion-card [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">  
+            <ion-item lines="none">
+                <ion-select interface="popover" class="rent_sell_sec" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}"  formControlName="label" placeholder="{{'Property Purpose' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                    <ion-option *ngFor="let type of propertyTypeDropDown" value="{{type.value}}">{{type.component}}</ion-option>
+                  </ion-select>   
+            </ion-item>        
+              <ion-item class="type_here">
+                  <ion-label color="primary" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" stacked>{{'Property Title' | translate}}:</ion-label>
+                  <ion-input type="text" placeholder="Type here..." formControlName="propertyTitle"></ion-input>
+                </ion-item>
+                <ion-item class="type_sec">
+                  <ion-label color="primary" stacked padding>{{'Select Type' | translate}}:</ion-label>
+                    <ion-select interface="popover" [selectOptions]="selectOptions" formControlName="propertyTypes" placeholder="{{'Select Type' | translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                      <ion-option *ngFor="let type of propertyTypesDropDown" value="{{type.value}}">{{type.component}}</ion-option>
+                   </ion-select>
+                </ion-item>
+<!-- 
+                <ion-item>
+                            <ion-label color="primary" stacked>{{'Number of Bedrooms' | translate}}:</ion-label>
+                            <ion-range min="1" max="20" pin="true" formControlName="rooms" snaps="true" color="primary"></ion-range>       
+                </ion-item> -->
+
+                <ion-item>
+                    <ion-label color="primary" stacked>{{'Number of Bedrooms' | translate}}:</ion-label>
+                  <ion-select ([ngModel])="editProperty.bedrooms" [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="rooms" placeholder="{{'Number of Bedrooms' | translate}}" class="select_cateog_sell input_border" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate"> 
+                    <ion-option  value="1">Studio</ion-option>      
+                    <ion-option *ngFor="let num of rooms" value="{{num}}">{{num}}</ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item class="type_sec">
+                    <ion-label color="primary" stacked padding>{{'Furniture' | translate}}:</ion-label>
+                    <ion-select interface="popover" [selectOptions]="selectOptions" formControlName="furniture" placeholder="{{'Furniture' | translate}}" class="select_cateog_sell" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                      <ion-option *ngFor="let type of furnitureDropDown" value="{{type.value}}">{{type.component}}</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-row>
+                    <ion-col col-12 class="Next" padding text-right>
+                      <button ion-button (click)="section('section2')"  color="secondary">{{'Next' | translate}}</button>
+                    </ion-col>
+                  </ion-row>
+                </ion-card>
+
+        </div>
+
+        <div *ngIf="section2" id="section2">
+       <ion-card [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+          <ion-list no-lines>
+            
+                <ion-item>
+                    <ion-label color="primary" stacked>{{'Amenities' | translate}}:</ion-label>
+                    <ion-select [selectOptions]="selectOptions" formControlName="amenities" placeholder="{{'Amenities' | translate}}"  class="select_cateog_sell" multiple [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                      <ion-option *ngFor="let type of amenitiesDropDown" value="{{type.value}}">{{type.component}}</ion-option>
+                    </ion-select>                      
+                  </ion-item>
+           
+            <ion-item>
+                <ion-label [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" color="primary" stacked>{{'Floor' | translate}}:</ion-label>
+                <ion-input [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" type="number" placeholder="{{'floor' | translate}}" formControlName="floor"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" color="primary" stacked>{{'Bathrooms' | translate}}:</ion-label>
+                <ion-input [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" type="number" placeholder="{{'Bathrooms' | translate}}" formControlName="bathrooms"></ion-input>
+              </ion-item>
+          </ion-list>
+
+          <ion-row class="next_prev">
+              <ion-col col-6  text-left padding>					
+                  <button ion-button color="secondary" (click)="section('section1')">{{'Back' | translate}}</button>
+                </ion-col>
+
+                <ion-col col-6 text-right padding>
+                    <button ion-button color="secondary" (click)="section('section3')">{{'Next' | translate}}</button>
+                  </ion-col>
+          </ion-row>
+        </ion-card>
+       </div>
+       <div *ngIf="section3" id="section3">
+          <ion-card [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+              <ion-row class="price_border">
+                  <ion-col col-12 class="type_sec">
+                    <ion-label [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" color="primary" stacked padding>{{'Price' | translate}}:</ion-label>
+                    <ion-input [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" type="text" formControlName="price" placeholder="{{'Price' | translate}}" class="select_cateog_sell"></ion-input>
+                  </ion-col>
+            </ion-row>
+            
+             
+
+                  <ion-row class="square_sec" *ngIf="editForm.value.label=='sell'">
+                    <ion-col col-6 class="rent">
+                      <ion-item>
+                          <ion-label [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" color="primary" stacked>{{'Property Size' | translate}}:</ion-label>
+                          <ion-input [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" type="number" placeholder="{{'Property Size' | translate}}" formControlName="squareMeters"></ion-input>
+                      </ion-item>
+                    </ion-col>
+
+                    <ion-col col-6>
+                      <ion-select  formControlName="propertyUnit" placeholder="{{'Property unit' | translate}}" [(ngModel)]="unit" class="select_cateog_sell" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                        <ion-option value="sq.m">{{'Square metre' | translate}}</ion-option>
+                        <ion-option value="sq.ft">{{'Square feet' | translate}}</ion-option>
+                    </ion-select>
+                    </ion-col>
+
+                  </ion-row>
+
+                  
+            <ion-row class="current_add">
+                <ion-label [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" color="primary" stacked padding>{{'Current Address' | translate}}</ion-label>
+              <ion-col [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" col-12 padding>
+                <p>{{area}}</p>
+              </ion-col>
+            </ion-row>
+              <ion-row>
+                      <ion-col col-12 padding>
+                          <ion-searchbar
+                          [(ngModel)]="autocomplete.query"
+                          [showCancelButton]="false"
+                          (ionInput)="updateSearch()"
+                          formControlName="saleArea"
+                          placeholder="{{'Change Address' | translate}}" value="IONIC">
+                          </ion-searchbar>
+                          <ion-list class="placelist">
+                          <ion-item *ngFor="let item of autocompleteItems" (click)="chooseItem(item)">
+                          {{item.description}}
+                          </ion-item>
+                          </ion-list>
+                          <ion-input [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" type="text" hidden formControlName="propertydetails"></ion-input>
+                        </ion-col>
+              </ion-row>
+
+            <ion-row class="submit_sec">
+              <ion-col col-12>
+                  <button ion-button *ngIf="checkBrowser !==1" icon-only color="light" type="button" (click)="addImage()" margin-left>
+                      <ion-icon name="log-out"></ion-icon>
+                    </button>
+              </ion-col>
+            </ion-row>
+              
+                <!-- for BROWSER -->
+                <ion-input [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" type='file'  *ngIf="checkBrowser==1"  (change)="onSelectFile($event)" multiple></ion-input>
+              <ion-row class="upload_img_sec">
+                <ion-col  *ngFor="let image of editProperty.imagesid" col-3>
+                <img  src="{{image.imagesurl}}" (click)="presentImage(myImage,$event)"> 
+                <img [src]="image.imagesurl" #myImage [hidden]="true"/>
+                <span (click)="deleteImage(image.imagesurl)" class="cross_icon"><ion-icon name="close-circle"></ion-icon></span>
+              </ion-col>
+              </ion-row>
+             <ion-row class="upload_btn_sec">
+                <ion-col col-6>
+                  <button ion-button color="secondary" (click)="section('section2')">{{'Back' | translate}}</button>
+              </ion-col> 
+              <ion-col col-6>
+                  <button  ion-button block color="dark" type="submit">{{'Submit' | translate}}</button> 
+              </ion-col>
+            </ion-row>
+                   
+      </ion-card>
+      </div>
+     </form>
+    </ion-grid>
+
+</ion-content>

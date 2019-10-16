@@ -1,0 +1,129 @@
+page-favorite-list {
+    .header-md .title-md .toolbar-title-md {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .list p {
+        margin: 10px 0px;
+    }
+    .list ion-thumbnail {
+        margin-bottom: 0px !important;
+    }
+    .list .item-block .item-inner {
+        border-bottom: 0px;
+    }
+    button.item {
+        padding-left: 0px;
+        border-bottom: 2px solid #008cec;
+        margin-bottom: 23px;
+    }
+    .list img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .mirrorContent{
+        .heart_icon_sec {
+            position: absolute;
+            top: 29px;
+            // right: 143px;
+            z-index: 99999;
+            left: 16px;
+            right: auto;
+        }
+        ion-thumbnail {
+            order: 2;
+            margin-right: 0px!important;
+        }
+        span.price {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: auto;
+            display: inline-block;
+        }
+        .title_sec {
+            direction: rtl;
+        }
+    }
+    @media screen and (min-width:1024px){
+        .for_sale .toolbar-title {
+            font-size: 40px;
+            color: #fff;
+            line-height: 30px;
+        }
+        .lg_screen_bg{
+            background-image: url(../assets/imgs/bg-img.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 40px !important;
+        }
+        img.serach {
+            display: none;
+        }
+        img.home_img {
+            display: none;
+        }
+        .fav_list_img {
+            display: none;
+        }
+    }
+    button.item.item-block {
+        margin: 0px;
+    }
+
+    .trash_color {
+        background: #ea1c1ce3;
+    }
+    .heart_icon_sec {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        z-index: 99999;
+    }
+    span.price {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 72px;
+        white-space: nowrap;
+        display: block;
+        font-size: 14px;
+    }
+    .title_sec [col-4] {
+        margin: auto;
+    }
+    
+    .fav_listing_sec {
+        .item-inner {
+            padding-right: 0px !important;
+        }
+        [col-4] {
+            padding-left: 0px;
+        } 
+    }
+
+    .item-md h2 {
+        margin: 2px 0;
+        font-size: 1.6rem;
+        font-weight: normal;
+        max-width: 57%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+     span.price {
+        text-indent: 4px;
+    }
+    .title_sec h2 {
+        white-space: nowrap;
+        width: 205px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .fav_listing_sec .item .item-inner {
+        background: transparent !important;
+    }
+    }
+    

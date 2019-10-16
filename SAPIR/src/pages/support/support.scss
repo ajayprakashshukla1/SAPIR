@@ -1,0 +1,31 @@
+page-support {
+    p.support_text {
+      color: #008ee9;
+  }
+  .contact_list .item-inner {
+      background-image: none !important;
+  }
+  //for android css//
+  .header-md .title-md .toolbar-title-md {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+  }
+
+  @media screen and (min-width:1024px){
+    .header {
+        display: none;
+    }
+    .support-header img {
+        max-width: 100%;
+        width: 100%;
+        max-height: 353px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        height: 100%;
+    }
+    
+}
+  //end//
+}

@@ -1,0 +1,175 @@
+page-mylisting {
+    .for_sale .toolbar-title {
+        font-size: 20px;
+        color: #008ee9;
+    }
+    .scroll-content {
+        padding-top: 0px !important;
+    }
+    [col-12] img {
+        height: 180px;
+        max-height: 180px;
+        object-fit: cover;
+        max-width: 100%;
+        width: 100%;
+    }
+    .mylisting_user img {
+        border-radius: 50%;
+        height: 100px !important;
+        width: 100px !important;
+    }
+    .mobile_img [col-12]:nth-child(2) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+    }
+    .mobile_img {
+        position: relative;
+    }  
+    .mylisting_user [col-6] {
+        margin: auto;
+        margin-bottom: 0px;
+        font-size: 20px;
+        margin-left: 0px;
+    }  
+    .mylisting_user p {
+        box-shadow: 3px 5px 6px #e2e2e2;
+        padding-bottom: 5px;
+    }   
+    .property_home img {
+        max-width: 19px;
+        width: 100%;
+    }  
+    .property_home [col-7] {
+        padding-bottom: 6px !important;
+        border-bottom: 4px solid #e2e2e2;
+    }    
+    .my_listing_text [col-12] {
+        max-width: 42%;
+        width: 100%;
+        margin: auto;
+    }
+    .my_listing_text [col-12] h3 {
+        border-bottom: 4px solid #e2e2e2;
+        padding-bottom: 6px !important;
+    }
+    .property_home {
+        padding-bottom: 0px !important;
+    }
+    .edit {
+        position: absolute;
+        right: 5px;
+        max-width: 58px;
+        width: 100%;
+        text-align: center;
+        top: 5px;
+        background: rgba(190, 236, 248, 0.59);
+        padding: 7px 0px;
+    }
+    .edit p {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    .property_bedroom {
+        position: relative;
+        max-width: 90%;
+        width: 100%;
+        margin: auto;
+        border: 1px solid #cdcdce;
+        margin-bottom: 18px;
+    }
+    .property_bedroom p {
+        color: #008ee9;
+        padding: 2px 8px;
+    }
+    .property_bedroom .icon {
+        font-size: 24px;
+    }
+    .border_align {
+        border-bottom: 1px solid #cdcdce;
+        padding: 2px 8px;
+    }
+    .bottom_img_sec img {
+        min-height: 20px !important;
+        max-height: 20px !important;
+        max-width: 22px !important;
+    }
+    .date_sec {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        border-top: 1px solid #cdcdce;
+    }
+    .date_sec p {
+        margin: 5px 0px;
+        color: #000 !important;
+    }
+    .payment.col {
+        margin: auto;
+    }
+
+
+     .mirrorContent [col-11] {
+        direction: rtl;
+    }
+    .mirrorContent [col-11] {
+        -webkit-box-ordinal-group: 2;
+        order: 1;
+        max-width: 17% !important;
+        margin-left: 13px;
+    }
+    
+    .mirrorContent {
+    // .property_bedroom p {
+    //     text-indent: 10px;
+    // }
+     .property_bedroom {
+        direction: rtl;
+    }
+    .payment {
+        text-align: left;
+    }
+    .edit {
+        left: 6px !important;
+        right: auto !important;
+        max-width: 70px;
+        width: 100%;
+        }
+        .property_home {
+            direction: rtl;
+            }
+        .payment p {
+            text-align: left;
+            direction: ltr;
+        }
+    //end//
+}
+.edit {
+    max-width: 70px !important;
+    width: 100% !important;
+    }
+    .border_align img {
+        max-width: 16px !important;
+        height: 20px !important;
+   }
+
+   .address_img_sec {
+     padding: 2px 8px !important;
+     border-bottom: 1px solid #ccc !important;
+    ion-icon {
+        font-size: 22px !important;
+        color: #04a6f9;
+    }
+    span:nth-child(2) {
+        max-width: 90%;
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+ }
+ .payment p {
+    text-align: right;
+}
+}

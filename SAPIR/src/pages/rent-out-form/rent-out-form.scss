@@ -1,0 +1,225 @@
+page-rent-out-form {
+  .for_sale .toolbar-title {
+  font-size: 20px;
+  color: #008ee9;
+  }
+
+.city_home {
+  border: 2px solid #008cec !important;
+  margin: 0px 12px;
+  }
+  .city_home .select {
+  max-width: 100%;
+  }
+  button#undefined {
+  z-index: -9;
+  }
+  #slide1 .card {
+    box-shadow: 0 0px 2px #008cec;
+  }
+  .select-placeholder {
+  font-size: 15px;
+  }
+  .select_cateog_sell {
+  max-width: 98%;
+  width: 100%;
+  margin: auto;
+  }
+  #slide1 .label {
+  font-size: 16px;
+  color: #008cec;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  }
+  #section2 .label {
+  font-size: 16px;
+  color: #008cec;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  }
+  #section2 .card {
+    box-shadow: 0 0px 2px #008cec;
+  }
+  .range {
+  padding-top: 0px !important;
+  padding-bottom: 0px;
+  }
+  .range-knob {
+      width: 18px !important;
+      height: 18px !important;
+      background: #008cec !important;
+      top: 12px !important;
+      box-shadow: none !important;
+      }
+  #section3 .label {
+      font-size: 16px;
+      color: #008cec;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      }
+  #section3 .card {
+      box-shadow: 0 0px 2px #008cec;
+      }
+      //for android css//
+    .header-md .title-md .toolbar-title-md {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    .range-md .range-knob-min.range-knob-min .range-knob {
+      border: 0px !important;
+      top: 12px !important;
+  }
+  @media screen and (min-width:1024px){
+    .for_sale .toolbar-title {
+        font-size: 40px;
+        color: #fff;
+        line-height: 30px;
+    }
+    .lg_screen_bg{
+        background-image: url(../assets/imgs/bg-img.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 40px !important;
+    }
+    img.serach {
+        display: none;
+    }
+    button.back-button {
+        color: #fff;
+    }
+    form.list-form {
+      width: 100%;
+      max-width: 70%;
+      margin: auto;
+  }
+  
+  }
+//   .rent .select {
+//     padding-left: 9px;
+// }
+.astrick {
+    position: absolute;
+    font-size: 20px;
+}
+.has-error {
+    margin: 0px;
+}
+//end//
+.upload_text {
+color: #fff;
+padding-left: 6px;
+font-size: 12px;
+}  
+.search_bar_margin{
+margin-top: 0px;
+}  
+
+
+.ar{
+direction: rtl;
+}
+
+.en{
+direction: ltr;
+}
+ion-alert.ar .alert-checkbox-icon {
+left: -14px;
+top: 0;
+border-radius: 2px;
+position: relative;
+width: 16px;
+height: 16px;
+border-width: 2px;
+border-style: solid;
+border-color: #787878;
+}
+
+.upload_btn button.button-md {
+max-width: 100%;
+width: 100%;
+margin: auto !important;
+text-align: center;
+}
+.mirrorContent{
+.Next {
+  text-align: left !important;
+  }
+  input.searchbar-input {
+    text-align: right;
+    padding-right: 8px;
+  }
+  .label {
+    direction: rtl;
+    padding-right: 0px !important;
+  }
+  .text-input {
+    direction: rtl;
+  }
+  .previous_btn [col-6]:nth-child(2) .button-default {
+    float: none;
+  }
+  .previous_btn [col-6]:nth-child(2) {
+    text-align: left !important;
+}
+.previous_btn {
+  direction: rtl;
+}
+.previous_btn [col-6] {
+  text-align: right !important;
+  }
+  .upload_btn {
+    direction: rtl !important;
+    }
+    .final_btn {
+      width: 100%;
+      display: inherit;
+      direction: rtl;
+  }
+} 
+.scroll-content {
+will-change: initial !important;
+-webkit-overflow-scrolling: initial !important;
+}
+.language_selector {
+right: 7px !important;
+bottom: 24px !important;
+}
+ion-input {
+font-size: 14px;
+}
+.upload_btn ion-icon {
+transform: rotate(-90deg);
+color: #fff;
+font-weight: bold !important;
+}
+input.text-input {
+font-size: 14px;
+}
+.final_btn {
+  width: 100%;
+  display: inherit;
+}
+
+.mirrorContent .label:first-child {
+  margin-right: 0px;
+}
+.mirrorContent .new_type ion-input {
+  margin-right: 0px;
+}
+.mirrorContent .furniture_sec ion-select {
+  padding-right: 15px !important;
+}
+.mirrorContent .furniture_sec ion-label {
+  margin-right: 16px !important;
+}
+.mirrorContent .upload_btn ion-label {
+  white-space: normal;
+  text-overflow: unset;
+}
+.header-md .language_selector {
+  bottom: 24px !important;
+}
+}

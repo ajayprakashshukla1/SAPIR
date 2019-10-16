@@ -1,0 +1,52 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header padding>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menu_icon"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/imgs/logosapir.png" class="logo_img">
+    </ion-title>
+    <div class="language_selector" end>
+      <!-- <ion-label>{{ 'SELECT_LANGUAGE' | translate }}</ion-label> -->
+      <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" placeholder="{{ 'Set Language' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+        <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name | translate}}</ion-option>
+      </ion-select>
+    </div>
+      <!-- <img src="assets/imgs/search.png" class="serach"> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div class="main">
+    <ion-grid class="about-block" no-padding>
+<ion-row>
+  <ion-col col-12 no-padding>
+   <img src="assets/imgs/About us2.jpg">
+  </ion-col>
+</ion-row>
+<ion-card>
+<ion-row padding class="box_shadow" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+    <p class="about">{{'About Us' |translate}}</p>
+  <ion-col col-12 class="about_content">
+      <p class="first_content">{{'SapirApp serves the full lifecycle of owning and living in a home: buying, selling and renting.' | translate}}</p>
+          <p>{{'We offer Real Estate services in diverse locations such as Kiryat Bialik, Kiryat Motzkin, Kiryat Yam, United States,' | translate}}
+            {{'Cyprus and more. We focus all of our attention on providing you with the best quality service.' | translate}}</p>
+          <p>{{'We always strive for quality, not quantity. We are committed to helping them discover a place where you will' | translate}}
+            {{'love to live in and where you will feel more connected to the community.' | translate}}</p>      
+  </ion-col> 
+</ion-row>
+<ion-row [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+    <ion-col col-12 class="logo_img">
+        <img src="assets/imgs/logosapir.png"/>
+    </ion-col> 
+</ion-row>
+</ion-card>
+    </ion-grid>
+  </div>
+</ion-content>

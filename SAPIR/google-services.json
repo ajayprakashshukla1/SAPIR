@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "523700056971",
+    "firebase_url": "https://sapir-d0180.firebaseio.com",
+    "project_id": "sapir-d0180",
+    "storage_bucket": "sapir-d0180.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523700056971:android:a3d5578759b69300",
+        "android_client_info": {
+          "package_name": "icom.sapir.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523700056971-sfobd5en4sjloj1caqimriagfh2ubf04.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXEPdvdZWUd2MjPnY2gjz8KEU_-VLqJ6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523700056971-sfobd5en4sjloj1caqimriagfh2ubf04.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523700056971-a7t72vh3qpssnkvknh9dta9k025lm3oe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "icom.sapir.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

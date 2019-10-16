@@ -1,0 +1,128 @@
+page-contact-us {
+    p.support_text {
+        color: #008ee9;
+    }
+    .contact_list .item-inner {
+        background-image: none !important;
+    }
+    ion-grid.contact-content {
+        background-image: url(../assets/imgs/contact-bg.jpg);
+        min-width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: table;
+        min-width: 100%;
+        height: 100%;
+    }
+    .top_center {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .contact_list h4 {
+        color: #fff;
+        font-size: 17px;
+    }
+    img.logo_img {
+        max-width: 110px !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+    .contactus {
+        h2 {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 40px;
+            letter-spacing: 2px;
+            font-weight: normal;
+            margin-top: 25px;
+        }
+        p {
+            color: #fff;
+            font-style: italic;
+        }
+    }
+    .connect {
+        h3 {
+            color: #fff;
+            text-transform: uppercase;
+        }
+        ul {
+            padding-left: 0px;
+        }
+        ul li {
+            list-style: none;
+            display: inline-block;
+        }
+        ion-icon {
+            font-size: 23px;
+            margin-right: 12px;
+            color: #24aef9;
+            background-color: #fff;
+            width: 38px;
+            height: 38px;
+            text-align: center;
+            line-height: 35px;
+        }
+    }
+    .contactus h2:after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid #fff;
+        margin-top: 26px;
+        max-width: 22px;
+        margin-bottom: 28px;
+        margin: 28px auto;
+    }
+    // .header-md .title-md .toolbar-title-md {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    // }
+    @media screen and (min-width:1024px){
+        // .header {
+        //     display: none;
+        // }
+        .support-header img {
+            max-width: 100%;
+            width: 100%;
+            max-height: 353px;
+            -o-object-fit: cover;
+            object-fit: cover;
+            height: 100%;
+        }
+        .logo_sec {
+            max-width: 150px;
+            width: 100%;
+        }
+        
+    }
+
+    .title_img_sec {
+        text-align: center;
+    }
+    .title_img_sec img {
+        max-width: 140px;
+        width: 100%;
+    }
+    .social_icons .icon {
+        font-size: 28px;
+        margin: 0px 5px;
+        color: #24aef9;
+    }
+    .title_img_sec .toolbar-title {
+        padding-right: 0px;
+    }
+
+    h4.mirrorContent {
+        direction: rtl;
+    }
+    .mirrorContent .social_icons {
+        position: absolute;
+        left: 0;
+        right: auto;
+    }
+}

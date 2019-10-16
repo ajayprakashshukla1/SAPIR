@@ -1,0 +1,213 @@
+
+<ion-header padding class="lg_screen_bg">
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" class="menu_icon"></ion-icon>
+      </button>
+          <ion-title Class="for_sale">
+            <img src="assets/imgs/logosapir.png" class="logo_img">
+          </ion-title>
+        <!-- <img src="assets/imgs/search.png" class="serach"> -->
+    </ion-navbar>
+    <div class="language_selector" end>
+      <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" placeholder="{{ 'Set Language' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+        <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name | translate}}</ion-option>
+      </ion-select>
+    </div>
+  </ion-header>
+<ion-content no-padding>
+
+     <form method="post" enctype="multipart/form-data" class="list-form" [formGroup]="RentPropertyForm"  (ngSubmit)="sendData(RentPropertyForm)"> 
+        <ion-input type="text"  formControlName="token" class="token_sec"></ion-input>
+        <ion-input type="text"  hidden formControlName="token" value="{{token}}" class="token_sec"></ion-input>
+        <ion-input type="text"  formControlName="ImagesId" class="token_sec"></ion-input>
+        <ion-input type="text" hidden formControlName="propertyType" value='rent' ></ion-input>   
+        <ion-input type="text" hidden formControlName="currency_type" value='Shekel' ></ion-input>   
+
+        <ion-row class="city_home" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+            <ion-col col-12 class="rent">
+              <span class="red astrick">*</span><ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="city" enctype='multipart/form-data' placeholder="{{'Select Location' |translate}}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                <ion-option *ngFor="let citydetails of citys" value="{{citydetails.id}}">{{citydetails.city | translate }}</ion-option>
+              </ion-select>
+              <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('city').touched && RentPropertyForm.get('city').hasError('required')">{{'This field is required' | translate}}</p>
+            </ion-col>
+          </ion-row>
+          <div *ngIf="section1" id="slide1">
+              <ion-card [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+                  <ion-card-content no-padding>
+                      <ion-item>
+                          <ion-label color="primary" stacked><span class="red">*</span>{{'Property Title' | translate}}:</ion-label>
+                          <ion-input type="text" maxlength="50" placeholder="{{'Type here' | translate}}" formControlName="propertyTitle" class="input_border"></ion-input>
+                        </ion-item>
+                        <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('propertyTitle').touched && RentPropertyForm.get('propertyTitle').hasError('required')">{{'This field is required' | translate}}</p>
+
+                            <ion-label color="primary" stacked padding><span class="red">*</span>{{'Type' | translate}}:</ion-label>
+                            <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="propertyTypes" placeholder="{{'Select Type' | translate}}" class="select_cateog_sell input_border" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                              <ion-option value="Cottage">{{'Cottage' | translate}}</ion-option>
+                              <ion-option value="Duplex">{{'Duplex' | translate}}</ion-option>
+                              <ion-option value="Flats">{{'Flats' | translate}}</ion-option>
+                              <ion-option value="Penthouse">{{'Penthouse' | translate}}</ion-option>
+                              <ion-option value="Villa">{{'Villa' | translate}}</ion-option>
+                              <ion-option value="Studio">{{'Studio' | translate}}</ion-option>
+                              <ion-option value="Commercial">{{'Commercial' | translate}}</ion-option>    
+                            </ion-select>
+      
+                            <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('propertyTypes').touched && RentPropertyForm.get('propertyTypes').hasError('required')">{{'This field is required' | translate}}</p>  
+                                  <ion-row class="new_type">
+                                      <ion-col col-12>
+                                        <ion-label color="primary" stacked padding><span class="red">*</span>{{'Price / per month' | translate}}:</ion-label>
+                                        <ion-input type="tel" formControlName="price" placeholder="{{'Type here' |translate}}" class="select_cateog_sell input_border"></ion-input>
+                                        <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('price').touched && RentPropertyForm.get('price').hasError('required')">{{'This field is required' | translate}}</p>
+                                      </ion-col>
+                                </ion-row>   
+                                
+                                <ion-row class="new_type">
+                                  <ion-col col-12>
+                                    <ion-label color="primary" stacked padding><span class="red">*</span>{{'Phone Number' | translate}}:</ion-label>
+                                    <ion-input type="tel"  formControlName="phone" placeholder="{{'Phone Number' | translate}}" class="select_cateog_sell"></ion-input>
+                                    <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('phone').touched && RentPropertyForm.get('phone').hasError('required')">{{'This field is required' | translate}}</p>
+                                  </ion-col>
+                            </ion-row>  
+                        <ion-row>
+                            <ion-col col-12 class="Next" padding text-right>
+                              <button ion-button (click)="section('section2')" [disabled]="RentPropertyForm.get('city').hasError('required') || RentPropertyForm.get('propertyTitle').hasError('required')  || RentPropertyForm.get('phone').hasError('required') || RentPropertyForm.get('propertyTypes').hasError('required') || RentPropertyForm.get('price').hasError('required')" color="secondary">{{'Next' |translate}}</button>
+                            </ion-col>
+                        </ion-row>
+                  </ion-card-content>
+              </ion-card>
+          </div>
+          <div *ngIf="section2" id="section2">
+              <ion-card [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+                <ion-card-content no-padding>
+                  <!-- <p>&nbsp;</p> -->
+                  <ion-row>
+                      <ion-col col-12>
+                          <ion-item>
+                              <ion-label color="primary" stacked><span class="red">*</span>{{'Number of Bedrooms' | translate}}:</ion-label>                          
+                              <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="rooms" placeholder="{{'Number of Bedrooms' | translate}}" class="select_cateog_sell input_border" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                                <ion-option  value="1">Studio</ion-option>      
+                                <ion-option *ngFor="let num of rooms" value="{{num}}">{{num}}</ion-option>
+                              </ion-select>
+                          </ion-item>
+                            <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('rooms').touched && RentPropertyForm.get('rooms').hasError('required')">{{'This field is required' | translate}}</p>
+                      </ion-col>
+                      </ion-row>
+
+                      <ion-row>
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-label color="primary" stacked><span class="red">*</span>{{'Number of Bathrooms' | translate}}:</ion-label>                          
+                                  <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="bathrooms" placeholder="{{'Number of Bathrooms' | translate}}" class="select_cateog_sell input_border" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                                    <ion-option value="1">1</ion-option>
+                                    <ion-option value="2">2</ion-option>     
+                                    <ion-option value="3">3</ion-option>
+                                    <ion-option value="4">4</ion-option>
+                                    <ion-option value="5">5</ion-option>
+                                    <ion-option value="6">6</ion-option>
+                                    <ion-option value="7+">7+</ion-option>
+                                  </ion-select>
+                              </ion-item>
+                              <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('bathrooms').touched && RentPropertyForm.get('bathrooms').hasError('required')">{{'This field is required' | translate}}</p>
+                          </ion-col>
+                      </ion-row>
+
+                      <ion-row class="furniture_sec">
+                        <ion-col col-12>
+                            <ion-label color="primary" stacked padding>{{'Furniture' | translate}}:</ion-label>
+                            <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="furniture" placeholder="{{'Furniture' | translate}}" class="select_cateog_sell input_border" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                              <ion-option value="Furnished">{{'Furnished' | translate}}</ion-option>
+                              <ion-option value="Unfurnished">{{'Unfurnished' | translate}}</ion-option>
+                              <ion-option value="Semi Furnished">{{'Semi Furnished' | translate}}</ion-option>
+                            </ion-select>
+                        </ion-col>
+                          <!-- <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('furniture').touched && RentPropertyForm.get('furniture').hasError('required')">{{'This field is required' | translate}}</p> -->
+                      </ion-row>
+                      <ion-row>
+                          <ion-col col-12 class="rent">
+                              <ion-item>
+                                  <ion-label color="primary" stacked>{{'Building Floor' | translate}}:</ion-label>
+                                  <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" formControlName="floor" placeholder="{{'floor' | translate}}"  class="select_cateog_sell input_border" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                                      <ion-option value="0">{{'Ground level' | translate}}</ion-option>   
+                                    <ion-option *ngFor="let num of numbers" value="{{num}}">{{num}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                          </ion-row>
+                  <ion-row class="previous_btn">
+                    <ion-col col-6  text-left padding>					
+                      <button ion-button color="secondary" (click)="section('section1')">{{'Back' | translate}}</button>
+                    </ion-col>
+                    <ion-col col-6 text-right padding>
+                      <button [disabled]=" RentPropertyForm.get('bathrooms').hasError('required')"  ion-button color="secondary" (click)="section('section3')">{{'Next' |translate}}</button>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </div>
+            <div *ngIf="section3" id="section3">
+                <ion-card [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+										<ion-card-content no-padding>
+                        <ion-row>
+                            <ion-col col-12 class="rent">
+                                <ion-item>
+                                  <ion-label color="primary" stacked>{{'Amenities' | translate}}:</ion-label>
+                                     <ion-select [selectOptions]="selectOptions" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" [(ngModel)]="amen" formControlName="amenities" placeholder="{{'Amenities' | translate}}"  class="select_cateog_sell input_border" multiple [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+                                      
+                                      <ion-option *ngFor="let type of amenitiesDropDown" value="{{type.value}}">{{type.component}}</ion-option>  
+                                      
+                                      </ion-select>
+                                  </ion-item>
+
+                                  
+                                </ion-col> 
+                    </ion-row>  
+                            <ion-row>
+                                <ion-col col-12>
+                                 <ion-label color="primary" class="search_bar_margin" stacked padding><span class="red">*</span>{{'Address' | translate}}:</ion-label>
+                                   <ion-searchbar
+                                    [(ngModel)]="autocomplete.query"
+                                    [showCancelButton]="false"
+                                    (ionInput)="updateSearch()"
+                                    formControlName="saleArea"
+                                    placeholder="{{'Address' | translate}}">
+                                    </ion-searchbar>
+                                    <ion-list class="placelist">
+                                    <ion-item *ngFor="let item of autocompleteItems" (click)="chooseItem(item)">
+                                    {{ item.description }}
+                                    </ion-item>
+                                    </ion-list>
+                                    <ion-input type="text" hidden formControlName="propertydetails"></ion-input>
+                                  </ion-col>
+                                <p ion-text color="danger" class="text-1x has-error" padding *ngIf="RentPropertyForm.get('saleArea').touched && RentPropertyForm.get('saleArea').hasError('required')">{{'This field is required' | translate}}</p>
+                        
+                            <ion-col col-12 class="upload_btn">                                  
+                                      <ion-label ion-text color="dark" margin-bottom class="fw500">{{'Add Images of Property Min 5 & Max 15' | translate}}</ion-label>
+
+                                    <ion-input type='file'  *ngIf="checkBrowser==1"  (change)="onSelectFile($event)" multiple></ion-input>
+                                
+                                  <button ion-button *ngIf="checkBrowser !==1" icon-only color="light" type="button" (click)="addImage()" margin-left><span *ngIf=" uplodedImage > 0" class="upload_text">{{uplodedImage}}</span>
+                                    <ion-icon name="log-out" color="dark"></ion-icon>
+                                  </button>
+                                  <ion-col col-12>
+                                    <ion-label color="primary" stacked padding><span class="red">*</span>{{'Property Description' | translate}}:</ion-label>
+                                    <ion-input type="text" formControlName="description" placeholder="{{'Type here' | translate}}" class="select_cateog_sell input_border"></ion-input>
+                                    <p ion-text color="danger" padding class="text-1x has-error" *ngIf="RentPropertyForm.get('description').touched &&  RentPropertyForm.get('description').hasError('required')">{{"This field is required"   | translate}}</p>
+                                  </ion-col> 
+                              </ion-col>
+                              <div class="final_btn">
+                                <ion-col col-6>
+                                  <button ion-button color="secondary" (click)="section('section2')">{{'Back' | translate}}</button>
+                              </ion-col> 
+                              <ion-col col-6>
+                                  <button *ngIf="checkBrowser !==1" [disabled]="!RentPropertyForm.valid" ion-button block color="dark" type="submit">{{'Submit' | translate}}</button> 
+                                  <!-- for BROWSER -->
+                                  <button *ngIf="checkBrowser==1" accept="image/*" [disabled]="!RentPropertyForm.valid" type="button" (click)="BrowsersendData(RentPropertyForm)" ion-button block color="dark" >{{'Submit' | translate}}</button>
+                              </ion-col>
+                              </div>
+                             
+                            </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+ </form> 
+</ion-content>

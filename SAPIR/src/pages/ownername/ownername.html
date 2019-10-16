@@ -1,0 +1,77 @@
+<!--
+  Generated template for the OwnernamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header padding>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menu_icon"></ion-icon>
+    </button>
+    <ion-title Class="for_sale">
+      <img src="assets/imgs/logosapir.png" class="logo_img">
+    </ion-title>
+    <div class="language_selector" end>
+      <!-- <ion-label>{{ 'SELECT_LANGUAGE' | translate }}</ion-label> -->
+      <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}" placeholder="{{ 'Set Language' | translate }}" [cancelText]="'CANCEL' | translate"   [okText]="'OK'  | translate">
+        <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name | translate}}</ion-option>
+      </ion-select>
+    </div>
+      <!-- <img src="assets/imgs/search.png" class="serach"> -->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-grid no-padding>
+      <ion-row class="home_img">
+          <ion-col col-12>
+              <img  src="assets/imgs/My_Listings1.png" class="My_Listings_img">
+          </ion-col>
+          <ion-col col-12 text-center class="user_img">
+              <img (click)="viewImage(profilePic)" src="{{profilePic}}">
+              <button (click)="myProfilePic()" class="edit_btn_sec"><ion-icon name="md-create"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+   
+   
+ <ion-row class="border_box form_content">
+
+    <form [formGroup]="myProfileform" (ngSubmit)="myProfileformGo()" [ngClass]="{'mirrorContent' : (lanCss=='ar'),  'ltr' : (normalContent !='ar')}">
+      <ion-row>
+        <ion-col col-12 padding text-center class="img_sec token_sec">
+            <ion-input  type="text" formControlName="token" type="hidden" value="{{token}}" readonly></ion-input>
+          </ion-col>
+      <ion-col col-12 class="listed">
+          <ion-input type="text" class="name_sec" formControlName="displayname" value="{{userDetails.user_display_name}}"></ion-input>
+          <ion-icon name="md-create" class="edit_icon"></ion-icon>
+      </ion-col>
+          <ion-col col-12 text-center class="listed">
+              <ion-input type="text" formControlName="email" value="{{userDetails.user_email}}"></ion-input>
+              <ion-icon name="md-create" class="edit_icon"></ion-icon>
+          </ion-col>
+
+          <!-- <h1 class="rtl">Hello World</h1> -->
+          <ion-col col-12 text-center class="listed">
+              <ion-input type="Number" placeholder="{{'Contact Number' | translate}}" formControlName="phoneNumber" value="{{userDetails.user_phone_no}}"></ion-input>
+              <ion-icon name="md-create" class="edit_icon"></ion-icon>
+          </ion-col>
+          <ion-col col-12 text-center class="listed">
+              <span>{{'Number of properties' | translate}} = {{userDetails.no_of_properties}}</span>
+              <!-- <ion-icon name="md-create" class="edit_icon"></ion-icon> -->
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="update">
+              <button ion-button type="submit">{{'Update' | translate}}</button>
+          </ion-col>
+        </ion-row>
+    </form>
+          <ion-col col-12 text-center>
+                  <button ion-button (click)="goProperty()" class="view_map">{{'My ads' | translate}}</button>
+          </ion-col>
+          &nbsp;
+ </ion-row>
+</ion-grid>
+</ion-content>
